@@ -28,9 +28,6 @@ public class CustomerDAO {
                 connection.commit();
                 connection.close();
                 stmtTruncateTables.close();
-            } else {
-                connection.rollback();
-                throw new Exception("Couldn't truncate customers/orders");
             }
         } catch (Exception exception) {
             logger.error("Error while trying to delete customers and orders ", exception);
